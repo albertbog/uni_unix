@@ -1,0 +1,39 @@
+#!/bin/bash
+echo "Poprawne wywołania"
+echo ""
+./calculator.sh 1 + 2 + 3
+./calculator.sh 1 + 2 \* 3
+./calculator.sh 1 + 2 \* 3 - 4
+./calculator.sh 1 \* \( 5 - 3 \)
+./calculator.sh \( 1 + 1 \) \* \( 5 - 3 \)
+
+echo ""
+echo "Niepoprawne wywołania - test wyłapywania błędów"
+echo ""
+
+echo "a + b"
+./calculator.sh a + b
+echo "1 + a"
+./calculator.sh 1 + a
+echo "1 * 2"
+./calculator.sh 1 * 2
+echo "1 + \) 2"
+./calculator.sh 1 + \) 2
+echo "1 + \( 2 + 3 - 4 + 5"
+./calculator.sh 1 + \( 2 + 3 - 4 + 5
+echo "1 + \( 2 + 3 - 4 + 5 \)\)"
+./calculator.sh 1 + \( 2 + 3 - 4 + 5 \)\)
+echo "1 2 \( 2"
+./calculator.sh 1 2 \( 2
+echo "1 + 2 +"
+./calculator.sh 1 + 2 +
+echo "1 2 3"
+./calculator.sh 1 2 3
+echo "1 + 2 + 3.5"
+./calculator.sh 1 + 2 + 3.5
+echo "1 + 2 _ 3"
+./calculator.sh 1 + 2 _ 3
+echo "1 \* \( 5 - 3 \)"
+./calculator.sh 1 / \( 3 - 3 \)
+echo "5 / 0"
+./calculator.sh 5 / 0
